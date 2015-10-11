@@ -1,5 +1,9 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
+
+load "db/schema.rb" # use db agnostic schema by default
+# ActiveRecord::Migrator.up('db/migrate') # use migrations
+
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
